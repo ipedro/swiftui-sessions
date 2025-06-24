@@ -75,29 +75,21 @@ struct PublishedContentView: View {
         /// Selective subscription to items changes.
         /// This creates a one-way data flow from model to local state.
         .onReceive(model.$items) { newValue in
-            if items != newValue {
-                items = newValue
-            }
+            if items != newValue { items = newValue }
         }
         /// Selective subscription to header changes.
         .onReceive(model.$header) { newValue in
-            if header != newValue {
-                header = newValue
-            }
+            if header != newValue { header = newValue }
         }
         /// Two-way binding: propagate local changes back to the model.
         /// This ensures that if the view modifies items (e.g., through ListView),
         /// those changes are reflected in the model for other potential observers.
         .onChange(of: items) {
-            if items != model.items {
-                model.items = items
-            }
+            if items != model.items { model.items = items }
         }
         /// Two-way binding: propagate local header changes back to the model.
         .onChange(of: header) {
-            if header != model.header {
-                model.header = header
-            }
+            if header != model.header { model.header = header }
         }
     }
 }
