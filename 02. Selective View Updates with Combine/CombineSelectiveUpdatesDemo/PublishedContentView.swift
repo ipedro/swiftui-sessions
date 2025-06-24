@@ -14,7 +14,7 @@ import SwiftUI
 @MainActor
 final class PublishedDataModel {
     /// Only views that explicitly subscribe to model.$header will update when this changes.
-    @Published var header = "Published" {
+    var header: CurrentValueSubject<String, Never> = .init("Published") {
         willSet { print("\(Self.self): \(#function) changed.") }
     }
     
@@ -78,7 +78,7 @@ struct PublishedContentView: View {
             if items != newValue { items = newValue }
         }
         /// Selective subscription to header changes.
-        .onReceive(model.$header) { newValue in
+        .onReceive(model.header) { newValue in
             if header != newValue { header = newValue }
         }
         /// Two-way binding: propagate local changes back to the model.
@@ -89,7 +89,7 @@ struct PublishedContentView: View {
         }
         /// Two-way binding: propagate local header changes back to the model.
         .onChange(of: header) {
-            if header != model.header { model.header = header }
+            if header != model.header.value { model.header.value = header }
         }
     }
 }
