@@ -12,9 +12,10 @@ struct HeaderView: View {
 
     var body: some View {
         let _ = Self._printChanges()
+        
         HStack {
-            Text(header.capitalized)
-                .font(.headline)
+            Text(header.capitalized).font(.headline)
+            
             Button {
                 header = String(header.shuffled())
             } label: {

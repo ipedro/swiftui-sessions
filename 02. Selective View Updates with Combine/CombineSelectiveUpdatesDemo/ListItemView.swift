@@ -12,10 +12,12 @@ struct ListItemView: View {
 
     var body: some View {
         let _ = Self._printChanges()
+        
         HStack {
             Image(systemName: item.icon.rawValue)
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+            
             Text(item.description)
         }
     }

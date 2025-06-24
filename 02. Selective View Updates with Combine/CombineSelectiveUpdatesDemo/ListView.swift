@@ -12,6 +12,7 @@ struct ListView: View {
 
     var body: some View {
         let _ = Self._printChanges()
+        
         List(
             items.reversed(),
             rowContent: ListItemView.init
