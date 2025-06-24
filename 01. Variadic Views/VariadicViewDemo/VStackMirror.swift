@@ -25,8 +25,18 @@ import SwiftUI
     .border(Color.blue)
 }
 
-#Preview {
+#Preview("VSack Mirror") {
     let stack = VStack {
+        Text("some text")
+    }
+
+    let mirror = Mirror(reflecting: stack)
+
+    Text("\(mirror.children.map({ "\($0.label!): \($0.value)"}).joined(separator: "\n"))")
+}
+
+#Preview("ZStack Mirror") {
+    let stack = ZStackLayout {
         Text("some text")
     }
 
