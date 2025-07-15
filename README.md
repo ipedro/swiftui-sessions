@@ -23,11 +23,11 @@ Each demo project focuses on a specific SwiftUI topic and includes:
 
 *Advanced SwiftUI concepts and implementation techniques*
 
-- [ ] **SwiftUI Under the Hood: Variadic Views** - Deep dive into how SwiftUI handles multiple child views and variadic view builders
-- [ ] **Achieving Observation Benefits with Combine** - Update views only when affected properties change using Combine publishers
+- [x] **SwiftUI Under the Hood: Variadic Views** - Deep dive into how SwiftUI handles multiple child views and variadic view builders
+- [x] **Achieving Observation Benefits with Combine** - Update views only when affected properties change using Combine publishers
+- [x] **Under the Hood: View._makeView** - Exploring SwiftUI's internal view creation (Let's code some Primitive views)
 - [ ] **DynamicProperty Deep Dive** - Understanding and implementing custom property wrappers (Let's code a StateOrBinding)
 - [ ] **Styled Components API** - Building reusable, configurable components like Button or Toggle with consistent styling
-- [ ] **Under the Hood: View._makeView** - Exploring SwiftUI's internal view creation (Let's code a Versioned View)
 - [ ] **SwiftUI + Macros for Snapshot Testing** - Automated testing of multiple states and configurations using CaseIterable and macros
 
 ## Session Format
